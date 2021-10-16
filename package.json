@@ -1,0 +1,21 @@
+{
+  "name": "one-project-a-day",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev" : "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ravi9910kr/one-project-a-day.git"
+  },
+  "keywords": [],
+  "author": "Ravi Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ravi9910kr/one-project-a-day/issues"
+  },
+  "homepage": "https://github.com/ravi9910kr/one-project-a-day#readme"
+}
