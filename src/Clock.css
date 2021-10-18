@@ -1,4 +1,4 @@
-.Clock {
+:host {
   --clock-dimension: 400px;
   --center-dimension: 20px;
   --color-center: #8e05c2;
@@ -18,7 +18,7 @@
     inset 5px 3px 20px 3px var(--color-shadow-inset),
     inset -5px -3px 20px 3px red;
 }
-.Clock::after {
+:host::after {
   content: "";
   position: absolute;
   width: var(--center-dimension);

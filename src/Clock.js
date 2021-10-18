@@ -6,14 +6,14 @@ export default class ClockDiv extends HTMLElement {
     // importing css
     const linkStyleClock = document.createElement("link");
     linkStyleClock.setAttribute("rel", "stylesheet");
-    linkStyleClock.setAttribute("href", "./Clock.css");
+    linkStyleClock.setAttribute("href", "../src/Clock.css");
+    this.shadowRoot.append(linkStyleClock);
     console.log(linkStyleClock);
     // creating child elements
     const handHr = document.createElement("div"),
-      handMn = document.createElement("div");
-
+    handMn = document.createElement("div");
+    
     // adding attributes to all elements
-    this.setAttribute("class", "Clock");
     handHr.setAttribute("class", "Hand");
     handMn.setAttribute("class", "Hand");
 
