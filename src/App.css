@@ -1,8 +1,10 @@
-.App{
+@import "./Clock.css";
+
+.App {
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: #69DADB;
+  background-color: #69dadb;
 }
