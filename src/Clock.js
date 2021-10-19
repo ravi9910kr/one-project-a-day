@@ -11,15 +11,31 @@ export default class ClockDiv extends HTMLElement {
     console.log(linkStyleClock);
     // creating child elements
     const handHr = document.createElement("div"),
-    handMn = document.createElement("div");
-    
-    // adding attributes to all elements
-    handHr.setAttribute("class", "Hand");
-    handMn.setAttribute("class", "Hand");
+      handMn = document.createElement("div"),
+      handSc = document.createElement("div");
 
-    // appending elements
-    this.shadowRoot.appendChild(handMn);
-    this.shadowRoot.appendChild(handHr);
+    // adding attributes to all elements
+    handHr.setAttribute("class", "Hand hrHand");
+    handMn.setAttribute("class", "Hand mnHand");
+    handSc.setAttribute("class", "Hand scHand");
+    setInterval(() => {
+      // rotating the hands
+      this.rotateHand(handHr, handMn, handSc);
+      // appending elements
+      this.shadowRoot.appendChild(handHr);
+      this.shadowRoot.appendChild(handMn);
+      this.shadowRoot.appendChild(handSc);
+    }, 1000);
+  }
+  rotateHand(hrHnd, mnHnd, scHnd) {
+    const date = new Date();
+    const hr =
+        date.getHours() * 30 + date.getMinutes() / 2 + date.getSeconds() / 120,
+      mn = date.getMinutes() * 6 + date.getSeconds() / 10,
+      sc = date.getSeconds() * 6;
+    hrHnd.style.transform = `rotateZ(${hr}deg)`;
+    mnHnd.style.transform = `rotateZ(${mn}deg)`;
+    scHnd.style.transform = `rotateZ(${sc}deg)`;
   }
 }
 window.customElements.define("clock-div", ClockDiv);
