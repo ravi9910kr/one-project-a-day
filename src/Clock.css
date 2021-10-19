@@ -32,18 +32,33 @@
 }
 .Hand {
   --hand-width: 10px;
+  box-sizing: border-box;
   position: absolute;
   background-color: transparent;
   width: 100%;
   height: 100%;
 }
 .Hand::after {
+  /* outline: 2px solid white; */
   content: "";
   width: var(--hand-width);
   height: calc(var(--hand-width) * 10);
   position: absolute;
   bottom: calc(var(--clock-dimension) / 2);
   left: calc(var(--clock-dimension) / 2 - var(--hand-width) / 2);
-  background-color: blue;
-  /* border: 5px solid blue; */
+  background-color: transparent;
+  border-top: 20px solid red;
+}
+.hrHand::after{
+  border-top: 20px solid red;
+}
+.mnHand::after{
+  left: calc(var(--clock-dimension)/2 - var(--hand-width) * 0.3);
+  height: calc(var(--hand-width) * 12);
+  width: calc(var(--hand-width) * 0.6);
+}
+.scHand::after{
+  left: calc(var(--clock-dimension)/2 - var(--hand-width) * 0.1);
+  height: calc(var(--hand-width) * 15);
+  width: calc(var(--hand-width)* 0.2);
 }
